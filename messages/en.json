@@ -1,0 +1,181 @@
+{
+  "ErrorMessage": {
+    "invalidEmail": "Invalid email",
+    "required": "This field is required",
+    "minmaxPassword": "Password must be between 6 and 100 characters"
+  },
+  "Brand": {
+    "title": "Đỏ công nghệ",
+    "defaultTitle": "Đỏ công nghệ"
+  },
+  "HomePage": {
+    "title": "Home page",
+    "description": "Online shopping channel with thousands of diverse fresh and consumer products, clear origin, and transparent pricing.",
+    "slogan": "Supermarket near home, affordable prices.",
+    "h2": "A variety of products"
+  },
+  "ProductPage": {
+    "title": "Product page",
+    "description": "Online shopping channel with thousands of diverse fresh and consumer products, clear origin, and transparent pricing."
+  },
+  "Login": {
+    "title": "Login",
+    "description": "Manager login area",
+    "loginSuccess": "Login successfully",
+    "cardDescription": "Enter your email and password to log in to the system",
+    "buttonLogin": "Login",
+    "loginWithGoogle": "Login with Google"
+  },
+  "Register": {
+    "title": "Register",
+    "description": "Manager register area",
+    "registerSuccess": "Register successfully",
+    "cardDescription": "Enter your email and password to register to the system",
+    "buttonRegister": "Register",
+    "registerWithGoogle": "Register with Google"
+  },
+  "DishDetail": {
+    "notFound": "Dish not found"
+  },
+  "ProductDetail": {
+    "notFound": "Product not found",
+    "notFoundDesc": "This product has been removed or is not yet available.",
+    "home": "Home",
+    "addToCart": "Add to cart",
+    "buyNow": "Buy now",
+    "trust": {
+      "warranty": "12-month warranty",
+      "returns": "7-day returns",
+      "express": "Express delivery",
+      "genuine": "100% genuine"
+    },
+    "tabs": {
+      "specs": "Specs",
+      "highlights": "Highlights",
+      "reviews": "Reviews",
+      "qna": "Q&A"
+    },
+    "specs": {
+      "title": "Specifications"
+    },
+    "highlights": {
+      "title": "Highlights"
+    },
+    "description": {
+      "title": "Product description"
+    },
+    "reviews": {
+      "title": "Product reviews",
+      "count": "{count} reviews",
+      "filterLabel": "Filter:",
+      "filterAll": "All",
+      "sortNewest": "Newest",
+      "sortHelpful": "Most helpful",
+      "empty": "No matching reviews.",
+      "helpful": "Helpful ({count})",
+      "verified": "Verified purchase",
+      "writeTitle": "Write a review",
+      "writeName": "Full name",
+      "writeNamePlaceholder": "Your name",
+      "writeRating": "Star rating",
+      "writeContent": "Content",
+      "writeContentPlaceholder": "Share your real experience with this product...",
+      "writeSubmit": "Submit review",
+      "writeCancel": "Cancel",
+      "writeSuccess": "Thank you for your review! It is pending approval.",
+      "ratingLabels": ["", "Terrible", "Bad", "Average", "Good", "Excellent"]
+    },
+    "qna": {
+      "title": "Q&A",
+      "questionCount": "{count} questions",
+      "askTitle": "Ask a question about this product",
+      "askNamePlaceholder": "Your name",
+      "askPlaceholder": "What do you want to know about this product?",
+      "askSubmit": "Send",
+      "askSuccess": "Your question has been sent. We will reply as soon as possible!",
+      "searchPlaceholder": "Search questions...",
+      "empty": "No matching questions found.",
+      "answered": "Answered",
+      "pending": "Waiting for seller's response...",
+      "stock": "{count} items left"
+    },
+    "installment": "0% installment",
+    "discount": "{percent}% off",
+    "savingAmount": "Save {amount}"
+  },
+  "LoginGuest": {
+    "title": "Login to order",
+    "description": "Enter login information to place an order"
+  },
+  "GuestMenu": {
+    "title": "Menu",
+    "description": "Choose your favorite dishes"
+  },
+  "Cart": {
+    "title": "Cart",
+    "description": "Manage your cart"
+  },
+  "ManageAccounts": {
+    "title": "Manage accounts",
+    "description": "Manage employee accounts"
+  },
+  "ManageGuests": {
+    "title": "Manage guests",
+    "description": "Manage guest list"
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "description": "View and analyze sales data"
+  },
+  "Dishes": {
+    "title": "Dishes",
+    "description": "Manage dishes"
+  },
+  "Products": {
+    "title": "Products",
+    "description": "Manage products"
+  },
+  "Categories": {
+    "title": "Categories",
+    "description": "Manage Categories"
+  },
+  "Brands": {
+    "title": "Brands",
+    "description": "Manage Brands"
+  },
+  "Vouchers": {
+    "title": "Vouchers",
+    "description": "Manage Vouchers"
+  },
+  "Orders": {
+    "title": "Orders",
+    "description": "Manage orders"
+  },
+  "Setting": {
+    "title": "Setting",
+    "description": "Manage your account settings"
+  },
+  "Tables": {
+    "title": "Tables",
+    "description": "Manage tables"
+  },
+  "SwitchLanguage": {
+    "title": "Switch language",
+    "en": "English",
+    "vi": "Vietnamese"
+  },
+  "NavItem": {
+    "home": "Home",
+    "menu": "Menu",
+    "orders": "Orders",
+    "login": "Login",
+    "logout": "Logout",
+    "manage": "Manage",
+    "logoutDialog": {
+      "logoutQuestion": "Are you sure you want to log out?",
+      "logoutCancel": "Cancel",
+      "logoutOk": "Sign out",
+      "logoutConfirm": "Signing out may result in loss of your orders"
+    }
+  }
+}

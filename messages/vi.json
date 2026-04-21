@@ -1,0 +1,181 @@
+{
+  "ErrorMessage": {
+    "invalidEmail": "Email không hợp lệ",
+    "required": "Trường này không được để trống",
+    "minmaxPassword": "Mật khẩu phải từ 6 đến 100 ký tự"
+  },
+  "Brand": {
+    "title": "Đỏ công nghệ",
+    "defaultTitle": "Đỏ công nghệ"
+  },
+  "HomePage": {
+    "title": "Đỏ công nghệ",
+    "description": "Kênh mua sắm trực tuyến với hàng ngàn sản phẩm tươi sống và tiêu dùng đa dạng, xuất xứ rõ ràng, giá cả minh bạch.",
+    "slogan": "Siêu thị gần nhà, giá tiết kiệm",
+    "h2": "Đa dạng các sản phẩm"
+  },
+  "ProductPage": {
+    "title": "Sản phẩm",
+    "description": "Kênh mua sắm trực tuyến với hàng ngàn sản phẩm tươi sống và tiêu dùng đa dạng, xuất xứ rõ ràng, giá cả minh bạch."
+  },
+  "DishDetail": {
+    "notFound": "Món ăn không tồn tại"
+  },
+  "ProductDetail": {
+    "notFound": "Sản phẩm không tồn tại",
+    "notFoundDesc": "Sản phẩm đã bị xóa hoặc chưa được đăng bán.",
+    "home": "Trang chủ",
+    "addToCart": "Thêm vào giỏ hàng",
+    "buyNow": "Mua ngay",
+    "trust": {
+      "warranty": "Bảo hành 12 tháng",
+      "returns": "Đổi trả 7 ngày",
+      "express": "Giao hàng hỏa tốc",
+      "genuine": "Chính hãng 100%"
+    },
+    "tabs": {
+      "specs": "Thông số",
+      "highlights": "Nổi bật",
+      "reviews": "Đánh giá",
+      "qna": "Hỏi & Đáp"
+    },
+    "specs": {
+      "title": "Thông số kỹ thuật"
+    },
+    "highlights": {
+      "title": "Đặc điểm nổi bật"
+    },
+    "description": {
+      "title": "Mô tả sản phẩm"
+    },
+    "reviews": {
+      "title": "Đánh giá sản phẩm",
+      "count": "{count} đánh giá",
+      "filterLabel": "Lọc:",
+      "filterAll": "Tất cả",
+      "sortNewest": "Mới nhất",
+      "sortHelpful": "Hữu ích nhất",
+      "empty": "Không có đánh giá nào phù hợp.",
+      "helpful": "Hữu ích ({count})",
+      "verified": "Đã mua",
+      "writeTitle": "Viết đánh giá của bạn",
+      "writeName": "Họ tên",
+      "writeNamePlaceholder": "Tên của bạn",
+      "writeRating": "Đánh giá sao",
+      "writeContent": "Nội dung",
+      "writeContentPlaceholder": "Chia sẻ trải nghiệm thực tế của bạn về sản phẩm...",
+      "writeSubmit": "Gửi đánh giá",
+      "writeCancel": "Hủy",
+      "writeSuccess": "Cảm ơn bạn đã gửi đánh giá! Đánh giá đang chờ duyệt.",
+      "ratingLabels": ["", "Rất tệ", "Tệ", "Bình thường", "Tốt", "Xuất sắc"]
+    },
+    "qna": {
+      "title": "Hỏi & Đáp",
+      "questionCount": "{count} câu hỏi",
+      "askTitle": "Đặt câu hỏi về sản phẩm",
+      "askNamePlaceholder": "Họ tên của bạn",
+      "askPlaceholder": "Bạn muốn hỏi gì về sản phẩm này?",
+      "askSubmit": "Gửi",
+      "askSuccess": "Câu hỏi đã được gửi, chúng tôi sẽ trả lời sớm nhất!",
+      "searchPlaceholder": "Tìm câu hỏi...",
+      "empty": "Không tìm thấy câu hỏi phù hợp.",
+      "answered": "Đã trả lời",
+      "pending": "Câu hỏi đang chờ phản hồi từ người bán...",
+      "stock": "Còn {count} sản phẩm"
+    },
+    "installment": "Trả góp 0%",
+    "discount": "Giảm {percent}%",
+    "savingAmount": "Tiết kiệm {amount}"
+  },
+  "LoginGuest": {
+    "title": "Đăng nhập để gọi món",
+    "description": "Nhập thông tin đăng nhập để thực hiện gọi món"
+  },
+  "Login": {
+    "title": "Đăng nhập",
+    "description": "Khu vực đăng nhập quản lý",
+    "loginSuccess": "Đăng nhập thành công",
+    "cardDescription": "Nhập email và mật khẩu của bạn để đăng nhập vào hệ thống",
+    "buttonLogin": "Đăng nhập",
+    "loginWithGoogle": "Đăng nhập với Google"
+  },
+  "Register": {
+    "title": "Đăng ký",
+    "description": "Khu vực đăng ký quản lý",
+    "registerSuccess": "Đăng ký thành công",
+    "cardDescription": "Nhập email và mật khẩu của bạn để đăng ký vào hệ thống",
+    "buttonRegister": "Đăng ký",
+    "registerWithGoogle": "Đăng ký với Google"
+  },
+  "GuestMenu": {
+    "title": "Thực đơn",
+    "description": "Chọn món ăn yêu thích của bạn"
+  },
+  "Cart": {
+    "title": "Giỏ hàng",
+    "description": "Quản lý giỏ hàng của bạn"
+  },
+  "ManageAccounts": {
+    "title": "Quản lý tài khoản",
+    "description": "Quản lý tài khoản nhân viên"
+  },
+  "ManageGuests": {
+    "title": "Quản lý khách hàng",
+    "description": "Quản lý danh sách khách hàng"
+  },
+  "Dashboard": {
+    "title": "Bảng điều khiển",
+    "description": "Xem và phân tích dữ liệu bán hàng"
+  },
+  "Dishes": {
+    "title": "Món ăn",
+    "description": "Quản lý món ăn"
+  },
+  "Products": {
+    "title": "Sản phẩm",
+    "description": "Quản lý sản phẩm"
+  },
+  "Categories": {
+    "title": "Danh mục",
+    "description": "Quản lý Danh mục"
+  },
+  "Brands": {
+    "title": "Thương hiệu",
+    "description": "Quản lý Thương hiệu"
+  },
+  "Vouchers": {
+    "title": "Vouchers",
+    "description": "Quản lý Vouchers"
+  },
+  "Orders": {
+    "title": "Đơn hàng",
+    "description": "Quản lý đơn hàng"
+  },
+  "Setting": {
+    "title": "Cài đặt",
+    "description": "Quản lý cài đặt tài khoản của bạn"
+  },
+  "Tables": {
+    "title": "Bàn ăn",
+    "description": "Quản lý bàn ăn"
+  },
+  "SwitchLanguage": {
+    "title": "Chuyển ngôn ngữ",
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt"
+  },
+  "NavItem": {
+    "home": "Trang chủ",
+    "menu": "Thực đơn",
+    "orders": "Đơn hàng",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "manage": "Quản lý",
+    "logoutDialog": {
+      "logoutQuestion": "Bạn có chắc chắn muốn đăng xuất?",
+      "logoutCancel": "Hủy",
+      "logoutOk": "Đăng xuất",
+      "logoutConfirm": "Đăng xuất có thể dẫn đến mất dữ liệu đơn hàng của bạn"
+    }
+  }
+}
