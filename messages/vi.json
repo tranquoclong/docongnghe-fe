@@ -12,7 +12,8 @@
     "title": "Đỏ công nghệ",
     "description": "Kênh mua sắm trực tuyến với hàng ngàn sản phẩm tươi sống và tiêu dùng đa dạng, xuất xứ rõ ràng, giá cả minh bạch.",
     "slogan": "Siêu thị gần nhà, giá tiết kiệm",
-    "h2": "Đa dạng các sản phẩm"
+    "h2": "Đa dạng các",
+    "h2_2": "sản phẩm"
   },
   "ProductPage": {
     "title": "Sản phẩm",
@@ -20,6 +21,10 @@
   },
   "DishDetail": {
     "notFound": "Món ăn không tồn tại"
+  },
+  "Profile": {
+    "notFound": "hồ sơ không tồn tại",
+    "buttonUpdate": "Lưu thay đổi"
   },
   "ProductDetail": {
     "notFound": "Sản phẩm không tồn tại",

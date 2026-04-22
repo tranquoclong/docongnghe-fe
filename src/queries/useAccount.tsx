@@ -12,8 +12,14 @@ export const useAccountMe = (enabled: boolean) => {
 }
 
 export const useUpdateMeMutation = () => {
+  const queryClient = useQueryClient()
   return useMutation({
-    mutationFn: accountApiRequest.updateMe
+    mutationFn: accountApiRequest.updateMe,
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: queryKeys.accountMe.all
+      })
+    }
   })
 }
 

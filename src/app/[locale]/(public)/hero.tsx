@@ -17,7 +17,7 @@ const ITEMS = [
     id: 2,
     label: 'Samsung Galaxy S25',
     image:
-      'https://cdn2.cellphones.com.vn/insecure/rs:fill:1036:450/q:100/plain/https://dashboard.cellphones.com.vn/storage/Frame21472288341.png'
+      'https://cdn2.cellphones.com.vn/insecure/rs:fill:1036:450/q:100/plain/https://dashboard.cellphones.com.vn/storage/home-x9ultra-roi1.png'
   },
   {
     id: 3,

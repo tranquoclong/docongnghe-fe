@@ -8,7 +8,7 @@ export default function Teaser({ brandList }: { brandList: BrandListResType['dat
       <InfiniteMovingCards
         items={brandList.map((brand) => ({ image: brand.logo }))}
         direction='right'
-        speed='slow'
+        speed='superSlow'
         logo={true}
       />
       <InfiniteMovingCards items={testimonials} direction='left' speed='slow' />
@@ -47,6 +47,6 @@ const testimonials = [
   },
   {
     image:
-      'https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:100/plain/https://dashboard.cellphones.com.vn/storage/sgsgssgdffff.png'
+      'https://cdn2.cellphones.com.vn/insecure/rs:fill:1036:450/q:100/plain/https://dashboard.cellphones.com.vn/storage/home-x9ultra-roi1.png'
   }
 ]

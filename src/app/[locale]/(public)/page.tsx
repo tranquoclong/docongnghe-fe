@@ -14,6 +14,7 @@ import { CategoryListResType } from '@/schemaValidations/category.schema'
 import Hero from './hero'
 import brandApiRequest from '@/apiRequests/brand'
 import { BrandListResType } from '@/schemaValidations/brand.schema'
+import { AuroraText } from '@/components/ui/aurora-text'
 
 export const revalidate = 3600
 
@@ -103,7 +104,10 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
       </ScrollAnimate>
       <ScrollAnimate>
         <section id='product-listing' className='space-y-10 py-16 px-4 md:px-8'>
-          <h2 className='text-center text-2xl font-bold'>{t('h2')}</h2>
+          <h2 className='text-center text-2xl font-bold'>
+            {t('h2')}
+            <AuroraText className='ml-1'>{t('h2_2')}</AuroraText>
+          </h2>
           {categoryList
             .filter((cat) => [48, 40, 34, 11, 5].includes(cat.id))
             .reverse()

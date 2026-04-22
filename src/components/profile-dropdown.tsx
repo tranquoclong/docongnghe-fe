@@ -68,7 +68,7 @@ export function ProfileDropdown({ role }: { role: RoleType | null }) {
                   <Link href='/client/cart'>Cart</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href='/settings/profile'>Settings</Link>
+                  <Link href='/client/setting/account'>Settings</Link>
                 </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />

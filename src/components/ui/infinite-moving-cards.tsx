@@ -19,7 +19,7 @@ export const InfiniteMovingCards = ({
     // title: string
   }[]
   direction?: 'left' | 'right'
-  speed?: 'fast' | 'normal' | 'slow'
+  speed?: 'fast' | 'normal' | 'slow' | 'superSlow'
   pauseOnHover?: boolean
   className?: string
   logo?: boolean
@@ -62,8 +62,10 @@ export const InfiniteMovingCards = ({
         containerRef.current.style.setProperty('--animation-duration', '20s')
       } else if (speed === 'normal') {
         containerRef.current.style.setProperty('--animation-duration', '40s')
-      } else {
+      } else if (speed === 'slow') {
         containerRef.current.style.setProperty('--animation-duration', '80s')
+      } else if (speed === 'superSlow') {
+        containerRef.current.style.setProperty('--animation-duration', '100s')
       }
     }
   }

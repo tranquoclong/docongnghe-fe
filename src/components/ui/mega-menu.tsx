@@ -9,6 +9,7 @@ import { Link } from '@/i18n/routing'
 import { generateSlugUrl } from '@/lib/utils'
 import { useAppStore } from '../app-provider'
 import DynamicIcon from '../layout/dynamic-icon'
+import { BorderBeam } from './shine-border'
 
 export type NavItem = {
   label: string
@@ -62,7 +63,7 @@ const ItemRow = ({ item, size = 'md', isSidebar = false, image = false, activeIt
       <Link
         href={`/products?category=${generateSlugUrl({ name: item.name, id: item.id })}`}
         className={[
-          'group flex items-center gap-2.5 rounded-xl transition-colors duration-150 hover:bg-white/[0.07]',
+          'group flex items-center gap-2.5 rounded-xl transition-colors duration-150 hover:bg-accent hover:text-accent-foreground',
           size === 'md' ? 'px-2.5 py-2' : 'px-2 py-1.5'
         ].join(' ')}
       >
@@ -121,7 +122,7 @@ const NavMenu = React.forwardRef<HTMLElement, NavMenuProps>(({ items, variant = 
   if (isSidebar) {
     return (
       <nav ref={ref as React.Ref<HTMLElement>} className={className}>
-        <ul className='flex w-60 flex-col gap-1'>
+        <ul className='flex w-60 flex-col gap-1 p-2 rounded-2xl border relative w-full max-w-[350px]'>
           {items[0]?.items?.map((item) => (
             <ItemRow
               key={item.name}
@@ -132,6 +133,14 @@ const NavMenu = React.forwardRef<HTMLElement, NavMenuProps>(({ items, variant = 
               setActiveItem={setActiveItem}
             />
           ))}
+          <BorderBeam duration={6} size={400} className='from-transparent via-[#3a86ff] to-transparent' />
+          <BorderBeam
+            duration={6}
+            delay={3}
+            size={400}
+            borderWidth={2}
+            className='from-transparent via-[#ff006e] to-transparent'
+          />
         </ul>
       </nav>
     )
@@ -158,7 +167,7 @@ const NavMenu = React.forwardRef<HTMLElement, NavMenuProps>(({ items, variant = 
               >
                 <Link
                   href={navItem.link ?? '#'}
-                  className='group relative flex cursor-pointer items-center gap-1 rounded-md px-4 py-1.5 text-sm transition-colors duration-150'
+                  className='group relative flex cursor-pointer items-center gap-1 rounded-md px-4 py-1.5 text-sm transition-colors duration-150 '
                 >
                   <span className='relative z-10'>{navItem.label}</span>
                   {navItem.subMenus && (
@@ -169,7 +178,9 @@ const NavMenu = React.forwardRef<HTMLElement, NavMenuProps>(({ items, variant = 
                       ].join(' ')}
                     />
                   )}
-                  {openMenu === navItem.label && <span className='absolute inset-0 rounded-md bg-white/10' />}
+                  {openMenu === navItem.label && (
+                    <span className='absolute inset-0 rounded-md bg-accent text-accent-foreground' />
+                  )}
                 </Link>
 
                 {navItem.subMenus && (

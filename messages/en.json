@@ -12,7 +12,8 @@
     "title": "Home page",
     "description": "Online shopping channel with thousands of diverse fresh and consumer products, clear origin, and transparent pricing.",
     "slogan": "Supermarket near home, affordable prices.",
-    "h2": "A variety of products"
+    "h2": "A variety of",
+    "h2_2": "products"
   },
   "ProductPage": {
     "title": "Product page",
@@ -36,6 +37,10 @@
   },
   "DishDetail": {
     "notFound": "Dish not found"
+  },
+  "Profile": {
+    "notFound": "Profile not found",
+    "buttonUpdate": "Save changes"
   },
   "ProductDetail": {
     "notFound": "Product not found",
