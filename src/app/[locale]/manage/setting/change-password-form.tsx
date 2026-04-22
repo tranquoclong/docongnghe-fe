@@ -4,28 +4,21 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useForm } from 'react-hook-form'
-import {
-  ChangePasswordBody,
-  ChangePasswordBodyType
-} from '@/schemaValidations/account.schema'
+import { ChangePasswordBody, ChangePasswordBodyType } from '@/schemaValidations/account.schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { useChangePasswordMutation } from '@/queries/useAccount'
 import { toast } from '@/components/ui/use-toast'
-import {
-  handleErrorApi,
-  setAccessTokenToLocalStorage,
-  setRefreshTokenToLocalStorage
-} from '@/lib/utils'
+import { handleErrorApi, setAccessTokenToLocalStorage, setRefreshTokenToLocalStorage } from '@/lib/utils'
 
 export default function ChangePasswordForm() {
   const changePasswordMutation = useChangePasswordMutation()
   const form = useForm<ChangePasswordBodyType>({
     resolver: zodResolver(ChangePasswordBody) as any,
     defaultValues: {
-      oldPassword: '',
       password: '',
-      confirmPassword: ''
+      newPassword: '',
+      confirmNewPassword: ''
     }
   })
   const onSubmit = async (data: ChangePasswordBodyType) => {
@@ -66,14 +59,14 @@ export default function ChangePasswordForm() {
             <div className='grid gap-6'>
               <FormField
                 control={form.control}
-                name='oldPassword'
+                name='password'
                 render={({ field }) => (
                   <FormItem>
                     <div className='grid gap-3'>
-                      <Label htmlFor='oldPassword'>Mật khẩu cũ</Label>
+                      <Label htmlFor='password'>Mật khẩu cũ</Label>
                       <Input
                         autoComplete='current-password'
-                        id='oldPassword'
+                        id='password'
                         type='password'
                         className='w-full'
                         {...field}
@@ -90,13 +83,7 @@ export default function ChangePasswordForm() {
                   <FormItem>
                     <div className='grid gap-3'>
                       <Label htmlFor='password'>Mật khẩu mới</Label>
-                      <Input
-                        autoComplete='new-password'
-                        id='password'
-                        type='password'
-                        className='w-full'
-                        {...field}
-                      />
+                      <Input autoComplete='new-password' id='password' type='password' className='w-full' {...field} />
                       <FormMessage />
                     </div>
                   </FormItem>
@@ -104,16 +91,14 @@ export default function ChangePasswordForm() {
               />
               <FormField
                 control={form.control}
-                name='confirmPassword'
+                name='confirmNewPassword'
                 render={({ field }) => (
                   <FormItem>
                     <div className='grid gap-3'>
-                      <Label htmlFor='confirmPassword'>
-                        Nhập lại mật khẩu mới
-                      </Label>
+                      <Label htmlFor='confirmNewPassword'>Nhập lại mật khẩu mới</Label>
                       <Input
                         autoComplete='new-password'
-                        id='confirmPassword'
+                        id='confirmNewPassword'
                         type='password'
                         className='w-full'
                         {...field}

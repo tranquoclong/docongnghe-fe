@@ -42,11 +42,10 @@ export default function MenuOrder() {
     fromDate: startOfMonth(now),
     toDate: endOfDay(now)
   })
-  const popularDishIds = useMemo(
-    () => new Set((indicatorData?.payload.data.dishIndicator ?? []).map((d) => d.id)),
-    [indicatorData]
-  )
-
+  // const popularDishIds = useMemo(
+  //   () => new Set((indicatorData?.payload.data.dishIndicator ?? []).map((d) => d.id)),
+  //   [indicatorData]
+  // )
   // Debounce search
   useEffect(() => {
     timerRef.current = setTimeout(() => setDebouncedSearch(search), 300)
@@ -170,12 +169,12 @@ export default function MenuOrder() {
                   Hết hàng
                 </span>
               )}
-              {popularDishIds.has(dish.id) && (
+              {/* {popularDishIds.has(dish.id) && (
                 <Badge className='absolute top-0.5 right-0.5 z-10 bg-amber-500 hover:bg-amber-600 text-white text-[9px] px-1 py-0 gap-0.5'>
                   <Flame className='h-2 w-2' />
                   Hot
                 </Badge>
-              )}
+              )} */}
               <Image
                 src={dish.image}
                 alt={dish.name}
@@ -227,12 +226,12 @@ export default function MenuOrder() {
               </DialogHeader>
               <div className='space-y-3'>
                 <div className='relative overflow-hidden rounded-md'>
-                  {popularDishIds.has(selectedDish.id) && (
+                  {/* {popularDishIds.has(selectedDish.id) && (
                     <Badge className='absolute top-1 right-1 z-10 bg-amber-500 hover:bg-amber-600 text-white text-[10px] px-1.5 py-0.5 gap-0.5'>
                       <Flame className='h-2.5 w-2.5' />
                       Phổ biến
                     </Badge>
-                  )}
+                  )} */}
                   <Image
                     src={selectedDish.image}
                     alt={selectedDish.name}
