@@ -66,44 +66,51 @@ export const removeTokensFromLocalStorage = () => {
   isBrowser && localStorage.removeItem('accessToken')
   isBrowser && localStorage.removeItem('refreshToken')
 }
+
+let refreshTokenPromise: Promise<void> | null = null
+
 export const checkAndRefreshToken = async (param?: {
   onError?: () => void
   onSuccess?: () => void
   force?: boolean
 }) => {
-  // Không nên đưa logic lấy access và refresh token ra khỏi cái function `checkAndRefreshToken`
-  // Vì để mỗi lần mà checkAndRefreshToken() được gọi thì chúng ta se có một access và refresh token mới
-  // Tránh hiện tượng bug nó lấy access và refresh token cũ ở lần đầu rồi gọi cho các lần tiếp theo
   const accessToken = getAccessTokenFromLocalStorage()
   const refreshToken = getRefreshTokenFromLocalStorage()
-  // Chưa đăng nhập thì cũng không cho chạy
   if (!accessToken || !refreshToken) return
+
   const decodedAccessToken = decodeToken(accessToken)
   const decodedRefreshToken = decodeToken(refreshToken)
-  // Thời điểm hết hạn của token là tính theo epoch time (s)
-  // Còn khi các bạn dùng cú pháp new Date().getTime() thì nó sẽ trả về epoch time (ms)
   const now = Math.round(new Date().getTime() / 1000)
-  // trường hợp refresh token hết hạn thì cho logout
+
   if (decodedRefreshToken.exp <= now) {
     removeTokensFromLocalStorage()
-    return param?.onError && param.onError()
+    return param?.onError?.()
   }
-  // Ví dụ access token của chúng ta có thời gian hết hạn là 10s
-  // thì mình sẽ kiểm tra còn 1/3 thời gian (3s) thì mình sẽ cho refresh token lại
-  // Thời gian còn lại sẽ tính dựa trên công thức: decodedAccessToken.exp - now
-  // Thời gian hết hạn của access token dựa trên công thức: decodedAccessToken.exp - decodedAccessToken.iat
-  if (param?.force || decodedAccessToken.exp - now < (decodedAccessToken.exp - decodedAccessToken.iat) / 3) {
-    // Gọi API refresh token
-    try {
-      // const role = decodedRefreshToken.roleName
-      // const res = role === Role.Guest ? await guestApiRequest.refreshToken() : await authApiRequest.refreshToken()
-      const res = await authApiRequest.refreshToken()
-      setAccessTokenToLocalStorage(res.payload.accessToken)
-      setRefreshTokenToLocalStorage(res.payload.refreshToken)
-      param?.onSuccess && param.onSuccess()
-    } catch (error) {
-      param?.onError && param.onError()
-    }
+
+  const shouldRefresh =
+    param?.force ||
+    decodedAccessToken.exp - now < (decodedAccessToken.exp - decodedAccessToken.iat) / 3
+
+  if (!shouldRefresh) return
+
+  if (!refreshTokenPromise) {
+    refreshTokenPromise = authApiRequest
+      .refreshToken()
+      .then((res) => {
+        setAccessTokenToLocalStorage(res.payload.accessToken)
+        setRefreshTokenToLocalStorage(res.payload.refreshToken)
+      })
+      .finally(() => {
+        refreshTokenPromise = null
+      })
+  }
+
+  try {
+    await refreshTokenPromise
+    param?.onSuccess?.()
+  } catch {
+    removeTokensFromLocalStorage()
+    param?.onError?.()
   }
 }
 

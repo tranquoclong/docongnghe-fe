@@ -41,6 +41,7 @@ export function SignOutDialog({ open, onOpenChange }: SignOutDialogProps) {
       confirmText={t('logoutDialog.logoutOk')}
       cancelBtnText={t('logoutDialog.logoutCancel')}
       destructive
+      isLoading={logoutMutation.isPending}
       handleConfirm={handleSignOut}
       className='sm:max-w-sm'
     />

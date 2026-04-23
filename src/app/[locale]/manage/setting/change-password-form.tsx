@@ -25,8 +25,8 @@ export default function ChangePasswordForm() {
     if (changePasswordMutation.isPending) return
     try {
       const result = await changePasswordMutation.mutateAsync(data)
-      setAccessTokenToLocalStorage(result.payload.accessToken)
-      setRefreshTokenToLocalStorage(result.payload.refreshToken)
+      // setAccessTokenToLocalStorage(result.payload.accessToken)
+      // setRefreshTokenToLocalStorage(result.payload.refreshToken)
       toast({
         description: 'change password successfully!'
       })
@@ -78,12 +78,18 @@ export default function ChangePasswordForm() {
               />
               <FormField
                 control={form.control}
-                name='password'
+                name='newPassword'
                 render={({ field }) => (
                   <FormItem>
                     <div className='grid gap-3'>
-                      <Label htmlFor='password'>Mật khẩu mới</Label>
-                      <Input autoComplete='new-password' id='password' type='password' className='w-full' {...field} />
+                      <Label htmlFor='newPassword'>Mật khẩu mới</Label>
+                      <Input
+                        autoComplete='new-password'
+                        id='newPassword'
+                        type='password'
+                        className='w-full'
+                        {...field}
+                      />
                       <FormMessage />
                     </div>
                   </FormItem>

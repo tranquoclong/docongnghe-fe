@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import BrandTable from '@/app/[locale]/manage/brands/brand-table'
 import { Suspense } from 'react'
 import envConfig, { Locale } from '@/config'
@@ -17,7 +11,7 @@ type Props = {
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  const params = await props.params;
+  const params = await props.params
   const t = await getTranslations({
     locale: params.locale,
     namespace: 'Brands'

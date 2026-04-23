@@ -7,7 +7,8 @@ export const useAccountMe = (enabled: boolean) => {
   return useQuery({
     queryKey: queryKeys.accountMe.all,
     queryFn: accountApiRequest.me,
-    enabled
+    enabled,
+    retry: false
   })
 }
 
@@ -23,9 +24,15 @@ export const useUpdateMeMutation = () => {
   })
 }
 
-export const useChangePasswordMutation = () => {
+export const useChangePasswordV2Mutation = () => {
   return useMutation({
     mutationFn: accountApiRequest.changePasswordV2
+  })
+}
+
+export const useChangePasswordMutation = () => {
+  return useMutation({
+    mutationFn: accountApiRequest.changePassword
   })
 }
 

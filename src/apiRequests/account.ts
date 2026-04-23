@@ -27,7 +27,7 @@ const accountApiRequest = {
   updateMe: (body: UpdateMeBodyType) =>
     http.put<AccountResType>(`/profile`, body),
   changePassword: (body: ChangePasswordBodyType) =>
-    http.put<AccountResType>(`/change-password`, body),
+    http.put<AccountResType>(`/profile/change-password`, body),
   sChangePasswordV2: (accessToken: string, body: ChangePasswordV2BodyType) =>
     http.put<ChangePasswordV2ResType>(`/change-password-v2`, body, {
       headers: {
@@ -36,13 +36,13 @@ const accountApiRequest = {
     }),
   changePasswordV2: (body: ChangePasswordV2BodyType) =>
     http.put<ChangePasswordV2ResType>(
-      `/api/change-password-v2`,
+      `/api${prefix}/change-password-v2`,
       body,
       {
         baseUrl: ''
       }
     ),
-  list: () => http.get<AccountListResType>(`${prefix}`),
+  list: () => http.get<AccountListResType>('/users'),
   addEmployee: (body: CreateEmployeeAccountBodyType) =>
     http.post<AccountResType>(prefix, body),
   updateEmployee: (id: number, body: UpdateEmployeeAccountBodyType) =>

@@ -38,12 +38,6 @@ const menuItems = [
     href: '/manage/vouchers',
     roles: [Role.ADMIN, Role.SELLER]
   },
-  // {
-  //   title: 'Món ăn',
-  //   Icon: Salad,
-  //   href: '/manage/dishes',
-  //   roles: [Role.ADMIN, Role.SELLER]
-  // },
   {
     title: 'Khách hàng',
     Icon: Users,
@@ -53,7 +47,7 @@ const menuItems = [
   {
     title: 'Nhân viên',
     Icon: Users2,
-    href: '/manage/accounts',
+    href: '/manage/sellers',
     roles: [Role.ADMIN]
   }
 ]
