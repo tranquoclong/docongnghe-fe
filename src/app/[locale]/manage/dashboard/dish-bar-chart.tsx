@@ -7,12 +7,17 @@ import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from '
 import { DashboardIndicatorResType } from '@/schemaValidations/indicator.schema'
 import { useMemo } from 'react'
 
+const resolveCssVar = (variable: string) => {
+  if (typeof window === 'undefined') return '#888'
+  return getComputedStyle(document.documentElement).getPropertyValue(variable).trim()
+}
+
 const colors = [
-  'hsl(var(--chart-1))',
-  'hsl(var(--chart-2))',
-  'hsl(var(--chart-3))',
-  'hsl(var(--chart-4))',
-  'hsl(var(--chart-5))'
+  resolveCssVar('--chart-1'),
+  resolveCssVar('--chart-2'),
+  resolveCssVar('--chart-3'),
+  resolveCssVar('--chart-4'),
+  resolveCssVar('--chart-5')
 ]
 
 const chartConfig = {

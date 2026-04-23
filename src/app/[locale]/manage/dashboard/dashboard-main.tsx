@@ -65,12 +65,171 @@ export default function DashboardMain() {
       clearTimeout(debounceRef.current)
     }
   }, [socket, refetch])
-  const revenue = data?.payload.data.revenue ?? 0
-  const clientCount = data?.payload.data.clientCount ?? 0
-  const orderCount = data?.payload.data.orderCount ?? 0
-  const servingOrderCount = data?.payload.data.servingOrderCount ?? 0
-  const revenueByDate = data?.payload.data.revenueByDate ?? []
-  const productIndicator = data?.payload.data.productIndicator ?? []
+  const datas = {
+    status: 200,
+    payload: {
+      data: {
+        revenue: 845000000,
+        clientCount: 1284,
+        orderCount: 1876,
+        servingOrderCount: 47,
+        productIndicator: [
+          {
+            id: 1,
+            publishedAt: '2026-01-10T08:00:00.000Z',
+            name: 'iPhone 15 Pro Max 256GB',
+            basePrice: 28000000,
+            virtualPrice: 32000000,
+            brandId: 1,
+            images: [
+              'https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/iphone-15-plus_1__1.png'
+            ],
+            variants: [
+              {
+                value: 'Màu sắc',
+                options: ['Titan Đen', 'Titan Trắng', 'Titan Tự Nhiên', 'Titan Xanh']
+              },
+              {
+                value: 'Dung lượng',
+                options: ['256GB', '512GB', '1TB']
+              }
+            ],
+            createdById: 1,
+            updatedById: 2,
+            deletedById: null,
+            deletedAt: null,
+            createdAt: '2026-01-05T07:00:00.000Z',
+            updatedAt: '2026-04-01T09:00:00.000Z',
+            successOrders: 412
+          },
+          {
+            id: 2,
+            publishedAt: '2026-02-01T08:00:00.000Z',
+            name: 'Samsung Galaxy S24 Ultra',
+            basePrice: 26000000,
+            virtualPrice: 30000000,
+            brandId: 2,
+            images: [
+              'https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/s/s/ss-s24-ultra-xam-222_1_1_1_1.png'
+            ],
+            variants: [
+              {
+                value: 'Màu sắc',
+                options: ['Titan Đen', 'Titan Xám', 'Tím']
+              },
+              {
+                value: 'Dung lượng',
+                options: ['256GB', '512GB']
+              }
+            ],
+            createdById: 1,
+            updatedById: 1,
+            deletedById: null,
+            deletedAt: null,
+            createdAt: '2026-01-20T07:00:00.000Z',
+            updatedAt: '2026-03-15T10:00:00.000Z',
+            successOrders: 378
+          },
+          {
+            id: 3,
+            publishedAt: '2026-03-01T08:00:00.000Z',
+            name: 'MacBook Air M3 15 inch',
+            basePrice: 32000000,
+            virtualPrice: 37000000,
+            brandId: 1,
+            images: [
+              'https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_13_17.png'
+            ],
+            variants: [
+              {
+                value: 'Màu sắc',
+                options: ['Midnight', 'Silver', 'Starlight', 'Space Gray']
+              },
+              {
+                value: 'Cấu hình',
+                options: ['8GB RAM / 256GB SSD', '8GB RAM / 512GB SSD', '16GB RAM / 512GB SSD']
+              }
+            ],
+            createdById: 2,
+            updatedById: 2,
+            deletedById: null,
+            deletedAt: null,
+            createdAt: '2026-02-20T07:00:00.000Z',
+            updatedAt: '2026-04-10T11:00:00.000Z',
+            successOrders: 295
+          },
+          {
+            id: 4,
+            publishedAt: '2026-03-15T08:00:00.000Z',
+            name: 'Dell XPS 15 9530',
+            basePrice: 38000000,
+            virtualPrice: 43000000,
+            brandId: 3,
+            images: [
+              'https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_659_40.png'
+            ],
+            variants: [
+              {
+                value: 'Cấu hình',
+                options: ['Core i7 / 16GB / 512GB SSD', 'Core i7 / 32GB / 1TB SSD', 'Core i9 / 32GB / 1TB SSD']
+              }
+            ],
+            createdById: 2,
+            updatedById: null,
+            deletedById: null,
+            deletedAt: null,
+            createdAt: '2026-03-10T08:00:00.000Z',
+            updatedAt: '2026-03-15T08:00:00.000Z',
+            successOrders: 143
+          },
+          {
+            id: 5,
+            publishedAt: null,
+            name: 'ASUS ROG Zephyrus G14 2026',
+            basePrice: 42000000,
+            virtualPrice: 48000000,
+            brandId: 4,
+            images: [
+              'https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/l/a/laptop-asus-gaming-rog-zephyrus-duo-16-gx650pz-nm031w.png'
+            ],
+            variants: [
+              {
+                value: 'Cấu hình',
+                options: ['Ryzen 9 / 16GB / 1TB SSD', 'Ryzen 9 / 32GB / 1TB SSD']
+              },
+              {
+                value: 'Màu sắc',
+                options: ['Eclipse Gray', 'Platinum White']
+              }
+            ],
+            createdById: 3,
+            updatedById: 3,
+            deletedById: null,
+            deletedAt: null,
+            createdAt: '2026-04-18T10:00:00.000Z',
+            updatedAt: '2026-04-20T14:00:00.000Z',
+            successOrders: 0
+          }
+        ],
+        revenueByDate: [
+          { date: '2026-04-15', revenue: 98000000 },
+          { date: '2026-04-16', revenue: 134000000 },
+          { date: '2026-04-17', revenue: 76000000 },
+          { date: '2026-04-18', revenue: 189000000 },
+          { date: '2026-04-19', revenue: 112000000 },
+          { date: '2026-04-20', revenue: 156000000 },
+          { date: '2026-04-21', revenue: 80000000 }
+        ]
+      },
+      message: 'Lấy dữ liệu thành công'
+    }
+  }
+  const revenue = datas?.payload.data.revenue ?? 0
+  const clientCount = datas?.payload.data.clientCount ?? 0
+  const orderCount = datas?.payload.data.orderCount ?? 0
+  const servingOrderCount = datas?.payload.data.servingOrderCount ?? 0
+  const revenueByDate = datas?.payload.data.revenueByDate ?? []
+  const productIndicator = datas?.payload.data.productIndicator ?? []
   const handlePreset = (preset: DatePreset) => {
     const now = new Date()
     const end = endOfDay(now)

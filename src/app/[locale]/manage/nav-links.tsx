@@ -20,7 +20,7 @@ export default function NavLinks() {
             className='group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base'
           >
             <Image src='/logo.png' width={50} height={50} quality={85} priority={true} alt='logo' sizes='100vw' />
-            <span className='sr-only'>Big Boy Restaurant</span>
+            <span className='sr-only'>Đỏ công nghệ</span>
           </Link>
 
           {menuItems.map((Item, index) => {

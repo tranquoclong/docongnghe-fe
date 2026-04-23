@@ -109,7 +109,7 @@ export default async function Home(props: { params: Promise<{ locale: string }> 
             <AuroraText className='ml-1'>{t('h2_2')}</AuroraText>
           </h2>
           {categoryList
-            .filter((cat) => [48, 40, 34, 11, 5].includes(cat.id))
+            .filter((cat) => [5].includes(cat.id))
             .reverse()
             .map((parentCategory) => (
               <ProductFilter

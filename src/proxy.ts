@@ -15,12 +15,6 @@ import {
   LOGIN_PATHS
 } from '@/constants/routes'
 
-/**
- * Decode JWT token payload without signature verification.
- * We use decode (not verify) because tokens are signed by the external API server
- * (api-bigboy.duthanhduoc.com) with its own secret. Our Next.js app only needs
- * to read the payload (role, exp) for routing decisions.
- */
 const decodeToken = (token: string) => {
   return jwt.decode(token) as TokenPayload
 }
