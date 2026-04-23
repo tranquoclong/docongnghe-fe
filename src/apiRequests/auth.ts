@@ -20,10 +20,7 @@ const authApiRequest = {
       baseUrl: ''
     }),
   sRegister: (body: RegisterBodyType) => http.post<LoginResType>('/auth/register', body),
-  register: (body: RegisterBodyType) =>
-    http.post<LoginResType>('/api/auth/register', body, {
-      baseUrl: ''
-    }),
+  register: (body: RegisterBodyType) => http.post<LoginResType>('/auth/register', body),
   verifyOtp: (body: { email: string; type: string }) => http.post('/auth/otp', body),
   loginWithGoogle: () => http.get<GoogleLoginResType>('/auth/google-link'),
   sLogout: (

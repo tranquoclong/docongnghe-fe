@@ -188,11 +188,9 @@ export default function RegisterForm() {
   const handleOtpConfirm = async (code: string) => {
     if (!pendingData || registerMutation.isPending) return
     try {
-      const result = await registerMutation.mutateAsync({ ...pendingData, code })
+      await registerMutation.mutateAsync({ ...pendingData, code })
       toast({ description: t('registerSuccess') })
-      const role = decodeToken(result.payload.accessToken).roleName
-      setRole(role)
-      role === 'ADMIN' ? router.push('/manage/dashboard') : router.push('/')
+      router.push('/login')
     } catch (error: any) {
       handleErrorApi({ error, setError: form.setError })
       setPendingData(null)
